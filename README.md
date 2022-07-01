@@ -1,4 +1,4 @@
-# sffg_tda
+# Sugar, Fish, Flowers, and Gravel with Topological Data Analysis
 
 ## Introduction
 

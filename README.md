@@ -15,7 +15,6 @@ matplotlib
 PIL
 pandas
 scikit-learn
-xarray
 tqdm
 gudhi
 ```

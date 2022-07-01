@@ -21,3 +21,7 @@ gudhi
 ```
 
 The final package, [GUDHI](https://gudhi.inria.fr/), contains the software implementations of TDA algorithms that we will principally use in this example.
+
+## Downloading Data
+
+To download the image data, navigate to the `image_download` folder, update the `download_all.ps1` (for Windows Powershell) or `download_all.sh` (for Unix-based systems) scripts with where you would like the data to be stored, then execute that script.

@@ -1,3 +1,12 @@
+#
+# This script does the primary computations for transforming image samples to
+# TDA data. We load the data, choose some random samples from each class, 
+# then subsample those and compute the persistent homology for each. The
+# annotation information for our random sample is saved as TDA_sample_df.pkl,
+# the raw barcode information is saved in TDA_raw_barcodes.pkl, the 
+# landscapes are saved in TDA_landscapes.pkl, and the locations of the sub-
+# sampling boxes are saved in TDA_boxes.pkl.
+#
 import pandas as pd
 import numpy as np
 from PIL import Image
@@ -55,7 +64,7 @@ patterns = ('Sugar', 'Fish', 'Flower', 'Gravel')
 n_rows = 200
 n_samples = 6
 sample_size = 96
-fn_prefix = './processed_data/TDA'
+fn_prefix = './processed_data/'
 
 # Choose n rows randomly from those annotations which are at least 128 x 128
 print('Selecting samples')
@@ -72,7 +81,7 @@ df = pd.concat(dfs)
 
 # Save sampled dataset
 print('Saving samples')
-df.to_pickle(fn_prefix + '_sample_df.pkl')
+df.to_pickle(fn_prefix + 'TDA_sample_df.pkl')
 
 # Initialize namedtuples for storing persistent homology data
 tda_data = namedtuple('tda_data', ['H0', 'H1'])
@@ -120,9 +129,9 @@ boxes.append(sample_size)
 
 # Save boxes and representations
 print('Saving files\n')
-with open(fn_prefix + '_raw_barcodes.pkl', 'wb') as barcodes_file:
+with open(fn_prefix + 'TDA_raw_barcodes.pkl', 'wb') as barcodes_file:
     pickle.dump(barcodes, barcodes_file)
-with open(fn_prefix + '_landscapes.pkl', 'wb') as rep_file:
+with open(fn_prefix + 'TDA_landscapes.pkl', 'wb') as rep_file:
     pickle.dump(representations, rep_file)
-with open(fn_prefix + '_sample_boxes.pkl', 'wb') as bx_file:
+with open(fn_prefix + 'TDA_sample_boxes.pkl', 'wb') as bx_file:
     pickle.dump(boxes, bx_file)

@@ -16,6 +16,7 @@ PIL
 pandas
 scikit-learn
 tqdm
+POT
 gudhi
 ```
 

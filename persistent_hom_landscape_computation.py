@@ -60,11 +60,13 @@ annos_full['height'] = annos_full.apply(clamp_height, axis=1)
 # n_rows number of annotations of each type
 # n_samples is the number of boxes from each annotation
 # sample_size is the size of each subsampling box
+# purpose is whether these data are training, test, or validation data
 patterns = ('Sugar', 'Fish', 'Flower', 'Gravel')
 n_rows = 200
 n_samples = 6
 sample_size = 96
-fn_prefix = './processed_data/'
+purpose = 'train_'
+fn_prefix = './processed_data/' + purpose
 
 # Choose n rows randomly from those annotations which are at least 128 x 128
 print('Selecting samples')

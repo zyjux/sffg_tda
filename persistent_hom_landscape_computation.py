@@ -20,7 +20,7 @@ from tqdm import tqdm
 # Initialize randomizer
 rng = np.random.default_rng()
 
-# Set path to raw images
+# Set path to raw images - change to where you downloaded data to
 IMGPATH = 'D:/research/crowdsourced_clouds/sugar-flower-fish-or-gravel/raw_data/'
 
 # Load datasets
@@ -60,12 +60,12 @@ annos_full['height'] = annos_full.apply(clamp_height, axis=1)
 # n_rows number of annotations of each type
 # n_samples is the number of boxes from each annotation
 # sample_size is the size of each subsampling box
-# purpose is whether these data are training, test, or validation data
+# purpose is one of 'train_', 'test_' or 'valid_' to create distinct training, test, and validation datasets.
 patterns = ('Sugar', 'Fish', 'Flower', 'Gravel')
 n_rows = 200
 n_samples = 6
 sample_size = 96
-purpose = 'train_'
+purpose = 'test_'
 fn_prefix = './processed_data/' + purpose
 
 # Choose n rows randomly from those annotations which are at least 128 x 128

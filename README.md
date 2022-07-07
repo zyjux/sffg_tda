@@ -17,6 +17,7 @@ pillow
 pandas
 scikit-learn
 tqdm
+fire
 POT
 gudhi
 ```

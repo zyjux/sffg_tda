@@ -12,6 +12,7 @@ To begin, install [miniconda](https://docs.conda.io/en/latest/miniconda.html) on
 python >= 3.9
 numpy
 matplotlib
+jupyterlab
 PIL
 pandas
 scikit-learn

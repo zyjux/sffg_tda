@@ -9,7 +9,7 @@ This is a repository containing code examples for running _persistent homology_,
 To begin, install [miniconda](https://docs.conda.io/en/latest/miniconda.html) on your system and create a clean environment, and if you have not already then install the following packages from [conda-forge](https://conda-forge.org/):
 
 ```
-python >= 3.9
+python
 numpy
 matplotlib
 jupyterlab

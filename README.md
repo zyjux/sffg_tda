@@ -13,7 +13,7 @@ python >= 3.9
 numpy
 matplotlib
 jupyterlab
-PIL
+pillow
 pandas
 scikit-learn
 tqdm

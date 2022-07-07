@@ -3,8 +3,7 @@
 # TDA data. We load the data, choose some random samples from each class, 
 # then subsample those and compute the persistent homology for each. The
 # annotation information for our random sample is saved as TDA_sample_df.pkl,
-# the raw barcode information is saved in TDA_raw_barcodes.pkl, the 
-# landscapes are saved in TDA_landscapes.pkl, and the locations of the sub-
+# the landscapes are saved in TDA_landscapes.pkl, and the locations of the sub-
 # sampling boxes are saved in TDA_boxes.pkl.
 #
 import pandas as pd
@@ -92,7 +91,6 @@ for purpose in ['train_', 'test_']:
     tda_data = namedtuple('tda_data', ['H0', 'H1'])
 
     # Initialize empty lists to store barcodes, landscapes, and subsample box information
-    barcodes = []
     representations = []
     boxes = []
     # Process each annotation
@@ -125,7 +123,6 @@ for purpose in ['train_', 'test_']:
             rep = tda_data(np.mean(H0_lscapes, 0), np.mean(H1_lscapes, 0))
 
             # Save the information from this annotation to our global lists
-            barcodes.append(tda_data(H0, H1))
             representations.append(rep)
             boxes.append([(a, b) for a, b in zip(x_coords, y_coords)])
 
@@ -134,8 +131,6 @@ for purpose in ['train_', 'test_']:
 
     # Save boxes and representations
     print('Saving files\n')
-    with open(fn_prefix + 'TDA_raw_barcodes.pkl', 'wb') as barcodes_file:
-        pickle.dump(barcodes, barcodes_file)
     with open(fn_prefix + 'TDA_landscapes.pkl', 'wb') as rep_file:
         pickle.dump(representations, rep_file)
     with open(fn_prefix + 'TDA_sample_boxes.pkl', 'wb') as bx_file:

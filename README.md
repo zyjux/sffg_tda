@@ -13,6 +13,7 @@ python
 numpy
 matplotlib
 jupyterlab
+ipympl
 pillow
 pandas
 scikit-learn

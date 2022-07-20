@@ -2,7 +2,8 @@
 
 ## Introduction
 
-This is a repository containing code examples for running _persistent homology_, a tool from the mathematical field of _topological data analysis (TDA)_ on the [Sugar, Fish, Flowers, and Gravel dataset by Stevens et. al](https://github.com/raspstephan/sugar-flower-fish-or-gravel), more fully described in the [paper here](https://journals.ametsoc.org/view/journals/bams/101/11/bamsD190324.xml).
+This is a repository containing code described in "A Primer on Topological Data Analysis to Support Image Analysis Tasks in
+Environmental Science" by Ver Hoef et. al. for running _persistent homology_, a tool from the mathematical field of _topological data analysis (TDA)_ on the [Sugar, Fish, Flowers, and Gravel dataset by Stevens et. al](https://github.com/raspstephan/sugar-flower-fish-or-gravel), more fully described in the [paper here](https://journals.ametsoc.org/view/journals/bams/101/11/bamsD190324.xml).
 
 ## Dependencies
 
